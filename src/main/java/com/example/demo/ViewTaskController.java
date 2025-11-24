@@ -83,6 +83,8 @@ public class ViewTaskController  {
             stage.setTitle("Edit Task");
             stage.setScene(new Scene(root));
             stage.show();
+
+            ((Stage) table.getScene().getWindow()).close();
         }catch (IOException error){
             error.printStackTrace();
         }

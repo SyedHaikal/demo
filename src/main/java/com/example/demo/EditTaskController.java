@@ -88,7 +88,7 @@ public class EditTaskController {
             Stage stage = (Stage) buttonEdit.getScene().getWindow();
             stage.close();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("myGUI.fxml")); // Back to Main Menu
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewAllTask.fxml")); // Back to Main Menu
             Parent root = loader.load();
             Stage mainStage = new Stage();
             mainStage.setTitle("TO DO LIST");
