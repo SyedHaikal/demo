@@ -4,6 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.*;
@@ -55,6 +58,20 @@ public class NewTaskController {
 
         Stage stage = (Stage) buttonSave.getScene().getWindow();
         stage.close();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("myGUI.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // C. Create and Show the Main Window
+        Stage mainStage = new Stage();
+        mainStage.setTitle("TO DO LIST");
+        mainStage.setScene(new Scene(root));
+        mainStage.show();
     }
 
     private List<ToDo> loadCurrentTasks() {
